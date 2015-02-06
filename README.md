@@ -11,6 +11,7 @@ This cookbook needs attributes coming from the icinga2-cookbook.
 Attributes
 ----------
 default['icinga2_db_create']['install_db']['enable'] == 'true'
+
 Attributes configured in the icinga2-cookbook:
 default['icinga2']['ido']['type'] == 'pgsql' 
 default['icinga2']['ido']['db_user']
