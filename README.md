@@ -23,13 +23,27 @@ Usage
 -----
 #### icinga2_db_create::default
 Just include in your runlist recipe['icinga2_db_create'] before the icinga2-cookbook
-['icinga2']['ido']['load_schema'] need to be 'true' to use this cookbook
+default['icinga2']['ido']['load_schema'] needs to be 'true' to use this cookbook
+
+Example Role to build Icinga2 with IcingaWeb2 and Postgres IDO:
+>>name "testrole"
+description "This role is used to test machines"
+run_list("recipe[icinga2_db_create]","recipe[icinga2::server]", "recipe[icinga2::server_web2]")
+default_attributes(
+        "icinga2" => {
+                "ido" => {"load_schema" => "true", "type" => "pgsql"},
+                "web2" => {"enable" => "false"}
+        },
+        "postgresql" => {
+                "password" => {
+                        "postgres" => "password"
+                }
+                })
+
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
