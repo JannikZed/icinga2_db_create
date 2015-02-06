@@ -28,7 +28,8 @@ default['icinga2']['ido']['load_schema'] needs to be 'true' to use this cookbook
 Example Role to build Icinga2 with IcingaWeb2 and Postgres IDO:
 >>name "testrole"
 description "This role is used to test machines"
-run_list("recipe[icinga2_db_create]","recipe[icinga2::server]", "recipe[icinga2::server_web2]")
+run_list("recipe[icinga2_db_create]","recipe[icinga2::server]", 
+"recipe[icinga2::server_web2]")
 default_attributes(
         "icinga2" => {
                 "ido" => {"load_schema" => "true", "type" => "pgsql"},
