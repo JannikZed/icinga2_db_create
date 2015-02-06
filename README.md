@@ -14,7 +14,7 @@ Attributes
 
 Attributes configured in the icinga2-cookbook:
 
-        default['icinga2']['ido']['type'] == 'pgsql' 
+        default['icinga2']['ido']['type']
         default['icinga2']['ido']['db_user']
         default['icinga2']['ido']['db_password']
         default['icinga2']['ido']['db_name']
