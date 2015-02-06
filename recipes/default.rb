@@ -6,3 +6,4 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+include_recipe 'icinga2_db_create::db_install'
