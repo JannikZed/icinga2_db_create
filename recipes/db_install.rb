@@ -19,7 +19,7 @@
 # This recipe enables the installation of a db-server and configures it for the ido-configuration
 # Currently only postgresql is supported
 
-include_recipe 'postgresql::server' if node['icinga2']['install_db']['enable'] == 'true' && node['icinga2']['ido']['type'] == 'pgsql'
+include_recipe 'postgresql::server' if node['icinga2_db_create']['install_db']['enable'] == 'true' && node['icinga2']['ido']['type'] == 'pgsql'
 
 # creates icinga db and user
 # execute 'create_db_mysql' do
