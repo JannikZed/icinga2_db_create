@@ -1,38 +1,16 @@
 icinga2_db_create Cookbook
 ==========================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+This cookbook is a wrapper cookbook for the icinga2-cookbook. "https://github.com/Icinga/chef-icinga2".
+It is used to create an empty database (currently only postgresql is supported) and configures it with user and password.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+This cookbook needs attributes coming from the icinga2-cookbook.
 
-e.g.
-#### packages
-- `toaster` - icinga2_db_create needs toaster to brown your bagel.
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
 
-e.g.
-#### icinga2_db_create::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['icinga2_db_create']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
 
 Usage
 -----
