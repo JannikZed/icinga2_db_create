@@ -10,20 +10,20 @@ This cookbook needs attributes coming from the icinga2-cookbook.
 
 Attributes
 ----------
-default['icinga2_db_create']['install_db']['enable'] == 'true'
+        default['icinga2_db_create']['install_db']['enable'] == 'true'
 
 Attributes configured in the icinga2-cookbook:
-default['icinga2']['ido']['type'] == 'pgsql' 
-default['icinga2']['ido']['db_user']
-default['icinga2']['ido']['db_password']
-default['icinga2']['ido']['db_name']
-default['icinga2']['ido']['load_schema']
+        default['icinga2']['ido']['type'] == 'pgsql' 
+        default['icinga2']['ido']['db_user']
+        default['icinga2']['ido']['db_password']
+        default['icinga2']['ido']['db_name']
+        default['icinga2']['ido']['load_schema']
 
 Usage
 -----
 #### icinga2_db_create::default
-Just include in your runlist recipe['icinga2_db_create'] before the icinga2-cookbook
-default['icinga2']['ido']['load_schema'] needs to be 'true' to use this cookbook
+Just include in your runlist `recipe['icinga2_db_create']` before the icinga2-cookbook
+`default['icinga2']['ido']['load_schema']` needs to be 'true' to use this cookbook
 
 Example Role to build Icinga2 with IcingaWeb2 and Postgres IDO:
 >>name "testrole"
