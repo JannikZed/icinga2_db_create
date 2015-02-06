@@ -10,24 +10,20 @@ This cookbook needs attributes coming from the icinga2-cookbook.
 
 Attributes
 ----------
+default['icinga2_db_create']['install_db']['enable'] == 'true'
 
+Attributes configured in the icinga2-cookbook:
+default['icinga2']['ido']['type'] == 'pgsql' # defines what database-server should be installed (currently only postgres
+default['icinga2']['ido']['db_user']
+default['icinga2']['ido']['db_password']
+default['icinga2']['ido']['db_name']
+default['icinga2']['ido']['load_schema']
 
 Usage
 -----
 #### icinga2_db_create::default
-TODO: Write usage instructions for each cookbook.
+Just include in your runlist recipe['icinga2_db_create'] before the icinga2-cookbook
 
-e.g.
-Just include `icinga2_db_create` in your node's `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[icinga2_db_create]"
-  ]
-}
-```
 
 Contributing
 ------------
@@ -43,4 +39,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: JannikZed
