@@ -13,7 +13,7 @@ Attributes
 default['icinga2_db_create']['install_db']['enable'] == 'true'
 
 Attributes configured in the icinga2-cookbook:
-default['icinga2']['ido']['type'] == 'pgsql' # defines what database-server should be installed (currently only postgres
+default['icinga2']['ido']['type'] == 'pgsql' 
 default['icinga2']['ido']['db_user']
 default['icinga2']['ido']['db_password']
 default['icinga2']['ido']['db_name']
@@ -23,7 +23,7 @@ Usage
 -----
 #### icinga2_db_create::default
 Just include in your runlist recipe['icinga2_db_create'] before the icinga2-cookbook
-
+['icinga2']['ido']['load_schema'] need to be 'true' to use this cookbook
 
 Contributing
 ------------
