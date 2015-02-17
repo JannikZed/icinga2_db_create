@@ -6,7 +6,7 @@ It is used to create an empty database (currently only postgresql is supported) 
 Requirements
 ------------
 This cookbook needs attributes coming from the icinga2-cookbook.
-
+For Centos 6 you need to disable "Defaults requiretty" in the sudoers-file
 
 Attributes
 ----------
