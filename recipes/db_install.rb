@@ -35,10 +35,10 @@ include_recipe 'postgresql::server' if node['icinga2_db_create']['install_db']['
 execute 'create_db_pgsql' do
   command "\
   cd /tmp
-  sudo -u postgres psql -c \"CREATE ROLE #{node['icinga2']['ido']['db_user']} WITH LOGIN PASSWORD \'#{node['icinga2']['ido']['db_password']}\'\";
-  sudo -u postgres createdb -O #{node['icinga2']['ido']['db_user']} -E UTF8 #{node['icinga2']['ido']['db_name']}
-  sudo -u postgres createlang plpgsql icinga \
-  && touch /var/lib/pgsql/db_created"
+  su - postgres -c \"psql -c \\\"CREATE ROLE #{node['icinga2']['ido']['db_user']} WITH LOGIN PASSWORD \'#{node['icinga2']['ido']['db_password']}\'\\\";\"
+  su - postgres -c \"createdb -O #{node['icinga2']['ido']['db_user']} -E UTF8 #{node['icinga2']['ido']['db_name']}\"
+  su - postgres -c \"createlang plpgsql icinga \
+  && touch /var/lib/pgsql/db_created\""
   creates '/var/lib/pgsql/db_created'
   only_if { node['icinga2']['ido']['load_schema'] && node['icinga2']['ido']['type'] == 'pgsql' }
 end
